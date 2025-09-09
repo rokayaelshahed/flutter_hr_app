@@ -40,6 +40,10 @@ class MyApp extends StatelessWidget {
           datePickerTheme: const DatePickerThemeData(
             backgroundColor: Colors.white,
           ),
+          timePickerTheme: TimePickerThemeData(
+
+              dayPeriodColor : Colors.grey[400],
+          )
         ),
         // ThemeData(
         //   scaffoldBackgroundColor: Colors.white,

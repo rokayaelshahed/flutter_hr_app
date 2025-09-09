@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hr/views/screens/leave_request_page.dart';
+import 'package:hr/views/screens/permission_request_page.dart';
 
 import '../widgets/header.dart';
 import '../widgets/historyItem.dart';
@@ -113,7 +114,9 @@ class _ServicesButtons extends StatelessWidget {
 
         },),
         const SizedBox(height: 10),
-        _ServiceButton(icon: Icons.access_time, label: 'طلب إذن خروج', onPressed: () {  },),
+        _ServiceButton(icon: Icons.access_time, label: 'طلب إذن خروج', onPressed: () {
+          Navigator.of(context).push(MaterialPageRoute(builder: (context) => const PermissionRequestPage()));
+        },),
         const SizedBox(height: 10),
         _ServiceButton(icon: Icons.credit_card, label: 'طلب بيع', onPressed: () {  },),
       ],
