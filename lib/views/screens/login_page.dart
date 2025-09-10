@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hr/constant/app_color.dart';
+import 'package:hr/views/screens/page_switcher.dart';
 
 import '../widgets/custom_logo_auth.dart';
 
@@ -169,6 +170,10 @@ class _LoginPageState extends State<LoginPage> {
               onPressed: () {
                 if (_formKey.currentState!.validate()) {
                   // Submit form
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => PageSwitcher()),
+                  );
                   print("Username: ${_usernameController.text}");
                   print("Password: ${_passwordController.text}");
                 }
