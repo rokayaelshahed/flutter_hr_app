@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hr/views/widgets/number_field_widget.dart';
 import '../widgets/appbar.dart';
 import '../widgets/form_widgets.dart';
+import '../widgets/order_summary_sheet.dart';
 
 class SalesOrderPage extends StatefulWidget {
   const SalesOrderPage({super.key});
@@ -310,7 +311,42 @@ class _SalesOrderPageState extends State<SalesOrderPage> {
                                 ),
                                 elevation: 0,
                               ),
-                              onPressed: () {},
+                              onPressed: () {
+                               // final qty = int.tryParse(_quantity as String) ?? 0;
+                                final unit = double.tryParse(_unitPrice) ?? 0.0;
+                                final line = double.tryParse(_linePrice) ?? 0.0;;
+
+                                showModalBottomSheet(
+                                  context: context,
+                                  isScrollControlled: true,
+                                  shape: const RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
+                                  ),
+                                  builder: (ctx) {
+                                    return OrderSummarySheet(
+                                      customer: _customer ?? 'العميل',
+                                      product: _product ?? 'المنتج',
+                                      quantity: _quantity,
+                                      unitPrice: unit,
+                                      linePrice: line,
+                                      orderDate: _orderDate ?? DateTime.now(),
+                                      statusText: 'إزالة',
+                                      statusColor: const Color(0xFFE53935),
+                                      onDelete: (){
+                                        Navigator.of(context).pop();
+                                        setState(() {
+                                          _customer = null;
+                                          _product = null;
+                                          _quantity = 1;
+                                          _quantityController.text = '1';
+                                          _unitPriceController.text = '100';
+                                          _linePriceController.text = '100';
+                                        });
+                                      },
+                                    );
+                                  },
+                                );
+                              },
                               child: const Text(
                                 'إضافة الى الطلب',
                                 style: TextStyle(

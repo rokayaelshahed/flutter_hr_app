@@ -43,7 +43,7 @@ class OrderCard extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 6),
-              _StatusChip(text: statusText, color: statusColor),
+              StatusChip(text: statusText, color: statusColor),
             ],
           ),
           const SizedBox(width: 22),
@@ -90,10 +90,10 @@ class _LabelValue extends StatelessWidget {
   }
 }
 
-class _StatusChip extends StatelessWidget {
+class StatusChip extends StatelessWidget {
   final String text;
   final Color color;
-  const _StatusChip({required this.text, required this.color});
+  const StatusChip({required this.text, required this.color});
 
   @override
   Widget build(BuildContext context) {
