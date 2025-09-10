@@ -75,19 +75,19 @@ class OrderSummarySheet extends StatelessWidget {
                     Row(
                       children: const [
                         Expanded(
-                          child: _HeaderCell(text: 'الحالة'),
+                          child: HeaderCell(text: 'الحالة'),
                         ),
                         Expanded(
-                          child: _HeaderCell(text: 'الإجمالي'),
+                          child: HeaderCell(text: 'الإجمالي'),
                         ),
                         Expanded(
-                          child: _HeaderCell(text: 'السعر'),
+                          child: HeaderCell(text: 'السعر'),
                         ),
                         Expanded(
-                          child: _HeaderCell(text: 'الكمية'),
+                          child: HeaderCell(text: 'الكمية'),
                         ),
                         Expanded(
-                          child: _HeaderCell(text: 'المنتج'),
+                          child: HeaderCell(text: 'المنتج'),
                         ),
                       ],
                     ),
@@ -104,16 +104,16 @@ class OrderSummarySheet extends StatelessWidget {
                           ),
                         ),
                         Expanded(
-                          child: _ValueCell(text: '${linePrice.toStringAsFixed(0)} \$'),
+                          child: ValueCell(text: '${linePrice.toStringAsFixed(0)} \$'),
                         ),
                         Expanded(
-                          child: _ValueCell(text: '${unitPrice.toStringAsFixed(0)} \$'),
+                          child: ValueCell(text: '${unitPrice.toStringAsFixed(0)} \$'),
                         ),
                         Expanded(
-                          child: _ValueCell(text: quantity.toString()),
+                          child: ValueCell(text: quantity.toString()),
                         ),
                         Expanded(
-                          child: _ValueCell(text: product),
+                          child: ValueCell(text: product),
                         ),
                       ],
                     ),
@@ -198,9 +198,9 @@ class OrderSummarySheet extends StatelessWidget {
   }
 }
 
-class _HeaderCell extends StatelessWidget {
+class HeaderCell extends StatelessWidget {
   final String text;
-  const _HeaderCell({required this.text});
+  const HeaderCell({required this.text});
 
   @override
   Widget build(BuildContext context) {
@@ -216,10 +216,10 @@ class _HeaderCell extends StatelessWidget {
   }
 }
 
-class _ValueCell extends StatelessWidget {
+class ValueCell extends StatelessWidget {
   final String text;
   final bool alignRight;
-  const _ValueCell({required this.text, this.alignRight = false});
+  const ValueCell({required this.text, this.alignRight = false});
 
   @override
   Widget build(BuildContext context) {
@@ -235,27 +235,3 @@ class _ValueCell extends StatelessWidget {
   }
 }
 
-class _StatusChip extends StatelessWidget {
-  final String text;
-  final Color color;
-  const _StatusChip({required this.text, required this.color});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-      decoration: BoxDecoration(
-        color: color,
-        borderRadius: BorderRadius.circular(8),
-      ),
-      child: Text(
-        text,
-        style: const TextStyle(
-          color: Colors.white,
-          fontSize: 11,
-          fontWeight: FontWeight.w800,
-        ),
-      ),
-    );
-  }
-}

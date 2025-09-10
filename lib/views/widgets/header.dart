@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../constant/app_color.dart';
+import '../screens/orders_page.dart';
 
 class Header extends StatelessWidget {
   const Header();
@@ -23,10 +24,17 @@ class Header extends StatelessWidget {
             children: [
               // Left side (Notifications + Calendar)
               Row(
-                children: const [
-                  Icon(Icons.notifications_none_rounded, color: Colors.white, size: 22),
-                  SizedBox(width: 12),
-                  Icon(Icons.calendar_today_outlined, color: Colors.white, size: 18),
+                children: [
+                  const Icon(Icons.notifications_none_rounded, color: Colors.white, size: 22),
+                  const SizedBox(width: 12),
+                  InkWell(
+                      onTap: (){
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const OrdersPage()),
+                        );
+                      },
+                      child: const Icon(Icons.calendar_today_outlined, color: Colors.white, size: 18)),
                 ],
               ),
 
