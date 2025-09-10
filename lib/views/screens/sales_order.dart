@@ -3,6 +3,7 @@ import 'package:hr/views/widgets/number_field_widget.dart';
 import '../widgets/appbar.dart';
 import '../widgets/form_widgets.dart';
 import '../widgets/order_summary_sheet.dart';
+import 'add_new_client_page.dart';
 
 class SalesOrderPage extends StatefulWidget {
   const SalesOrderPage({super.key});
@@ -166,25 +167,33 @@ class _SalesOrderPageState extends State<SalesOrderPage> {
                                 padding: EdgeInsets.zero,
                                 minimumSize: Size.zero,
                               ),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.min,
-                                textDirection: TextDirection.rtl,
-                                // Icon on the right
-                                children: const [
-                                  Icon(
-                                    Icons.person_add_alt_1_rounded,
-                                    size: 18,
-                                    color: Color(0xFF1F1F1F),
-                                  ),
-                                  SizedBox(width: 4),
-                                  Text(
-                                    'اضافة عميل جديد',
-                                    style: TextStyle(
+                              child: InkWell(
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(builder: (context) => const AddNewClientPage()),
+                                  );
+                                },
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  textDirection: TextDirection.rtl,
+                                  // Icon on the right
+                                  children: const [
+                                    Icon(
+                                      Icons.person_add_alt_1_rounded,
+                                      size: 18,
                                       color: Color(0xFF1F1F1F),
-                                      fontWeight: FontWeight.w700,
                                     ),
-                                  ),
-                                ],
+                                    SizedBox(width: 4),
+                                    Text(
+                                      'اضافة عميل جديد',
+                                      style: TextStyle(
+                                        color: Color(0xFF1F1F1F),
+                                        fontWeight: FontWeight.w700,
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           ),
