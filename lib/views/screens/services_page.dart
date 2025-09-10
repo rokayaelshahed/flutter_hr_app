@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hr/views/screens/leave_request_page.dart';
 import 'package:hr/views/screens/permission_request_page.dart';
+import 'package:hr/views/screens/sales_order.dart';
 
 import '../widgets/header.dart';
 import '../widgets/historyItem.dart';
@@ -118,7 +119,10 @@ class _ServicesButtons extends StatelessWidget {
           Navigator.of(context).push(MaterialPageRoute(builder: (context) => const PermissionRequestPage()));
         },),
         const SizedBox(height: 10),
-        _ServiceButton(icon: Icons.credit_card, label: 'طلب بيع', onPressed: () {  },),
+        _ServiceButton(icon: Icons.credit_card, label: 'طلب بيع', onPressed: () {
+          Navigator.of(context).push(MaterialPageRoute(builder: (context) => const SalesOrderPage()));
+
+        },),
       ],
     );
   }

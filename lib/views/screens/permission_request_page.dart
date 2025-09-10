@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hr/views/screens/sales_order.dart';
 import '../../controllers/permission_request_controller.dart';
 import '../widgets/appbar.dart';
 import '../widgets/form_widgets.dart';
@@ -34,8 +35,7 @@ class _PermissionRequestPageState extends State<PermissionRequestPage> {
             padding: const EdgeInsets.all(12),
             child: Column(
               children: [
-                _Card(
-                  padding: const EdgeInsets.fromLTRB(14, 16, 14, 18),
+                CardShell(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [

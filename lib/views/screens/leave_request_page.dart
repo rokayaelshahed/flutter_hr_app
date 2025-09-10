@@ -133,8 +133,12 @@ class _LeaveRequestFormPageState extends State<LeaveRequestFormPage> {
                           ),
                         ),
                         items: _leaveTypes
-                            .map((e) => DropdownMenuItem(value: e, child: Text(e,
-                            textAlign: TextAlign.right)))
+                            .map((e) => DropdownMenuItem(
+                            value: e,
+                            alignment: AlignmentDirectional.centerStart,
+                            child: Align(alignment: Alignment.centerRight, child: Text(e))
+                        )
+                        )
                             .toList(),
                         onChanged: (v) => setState(() => _selectedLeaveType = v),
                         validator: (v) => v == null ? 'يرجى اختيار نوع الإجازة' : null,
