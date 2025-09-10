@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:hr/views/screens/login_page.dart';
+import 'package:hr/views/screens/profile_page.dart';
 import 'package:hr/views/screens/services_page.dart';
 
-import '../../constant/app_color.dart';
 import 'home_checkIn_page.dart';
 
 
@@ -27,7 +25,7 @@ class _PageSwitcherState extends State<PageSwitcher> {
       body: [
         HomeCheckInPage(),
         ServicesPage()
-        ,LoginPage()
+        ,ProfilePage()
       ][_selectedIndex],
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
