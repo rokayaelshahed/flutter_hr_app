@@ -44,7 +44,13 @@ class ServicesPage extends StatelessWidget {
           children: [
             const Header(),
             const SizedBox(height: 22),
-            const SectionTitle(title: 'الخدمات'),
+            Row(
+                children:[
+                  Spacer(),
+                  const SectionTitle(title: 'الخدمات'),
+                  const SizedBox(width: 12),
+
+                ]),
             const SizedBox(height: 12),
             Expanded(
               child: SingleChildScrollView(
